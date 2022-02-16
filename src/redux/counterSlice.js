@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const counterSlice = createSlice({
   name: "counter",
   initialState: {
-    count: 0,
-    showATM: false
+    count: 1000,
+    showATM: true
   },
   reducers: {
     increment: (state, action) => {
@@ -12,10 +12,15 @@ const counterSlice = createSlice({
     },
 
     decrement: (state, action) => {
-      state.count -= action.payload;
+      if(action.payload > state.count){
+        alert("Not enough money on your account!")
+      } else {
+        state.count -= action.payload;
+      }
     },
     showATM: (state) => {
         state.showATM = !state.showATM;
+        console.log(state.showATM)
     }
   }
 });
