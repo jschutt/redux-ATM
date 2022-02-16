@@ -30,26 +30,30 @@ const ATM = () => {
   return (
     <div className={isATMOpen ? styles.ATMContainer : styles.ATMContainerHide}>
       <h1>Current amount: {count}</h1>
-      <h3>Withdrawal</h3>
-      <label htmlFor="inputValue">Amount: </label>
-      <input type="number" id="withdrawValue" />
-      <button onClick={() => {changeInputAmount("-")}}>Withdraw</button>
-      <div>
-        <button onClick={() => {changeSpecificAmount(100, "-")}}>-100</button>
-        <button onClick={() => {changeSpecificAmount(200, "-")}}>-200</button>
-        <button onClick={() => {changeSpecificAmount(500, "-")}}>-500</button>
-        <button onClick={() => {changeSpecificAmount(1000, "-")}}>-1000</button>
+      <div className={styles.amountContainers}>
+        <h2 className={styles.amountTitles}>Withdrawal</h2>
+        <label htmlFor="inputValue">Amount: </label>
+        <input type="number" id="withdrawValue" />
+        <button onClick={() => {changeInputAmount("-")}}>Withdraw</button>
+        <div className={styles.specificBtnContainer}>
+          <button onClick={() => {changeSpecificAmount(100, "-")}}>-100</button>
+          <button onClick={() => {changeSpecificAmount(200, "-")}}>-200</button>
+          <button onClick={() => {changeSpecificAmount(500, "-")}}>-500</button>
+          <button onClick={() => {changeSpecificAmount(1000, "-")}}>-1000</button>
+        </div>
       </div>
     <br/>
-      <h3>Deposit</h3>
+    <div className={styles.amountContainers}>
+      <h2 className={styles.amountTitles}>Deposit</h2>
       <label htmlFor="inputValue">Amount: </label>
       <input type="number" id="depositValue" />
       <button onClick={() => {changeInputAmount("+")}}>Deposit</button>
-      <div>
+      <div className={styles.specificBtnContainer}>
         <button onClick={() => {changeSpecificAmount(100, "+")}}>+100</button>
         <button onClick={() => {changeSpecificAmount(200, "+")}}>+200</button>
         <button onClick={() => {changeSpecificAmount(500, "+")}}>+500</button>
         <button onClick={() => {changeSpecificAmount(1000, "+")}}>+1000</button>
+      </div>
       </div>
     </div>
   );
