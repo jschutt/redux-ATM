@@ -20,7 +20,6 @@ const counterSlice = createSlice({
     },
     showATM: (state) => {
         state.showATM = !state.showATM;
-        console.log(state.showATM)
     }
   }
 });

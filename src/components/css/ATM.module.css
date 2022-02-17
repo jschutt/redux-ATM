@@ -1,16 +1,40 @@
+.welcomeContainer {
+    width: 75%;
+    margin: auto;
+}
+
+.welcomeTitle {
+    color: #474747;
+    margin: auto;
+    margin-top: 15%;
+}
+.byMe {
+    color: #1b7596;
+    font-weight: bold;
+    height: 20px;
+}
+
+.keypadImg {
+    filter: opacity(0.45) drop-shadow(0 0 0 #00bbff);
+    width: 30%;
+    margin: 20px auto 60px auto;
+    align-content: center;
+}
+
 .ATMContainer {
     display: flex;
     flex-direction: column;
     height: 540px;
     width: 500px;
-    border: 6px double #369bc0;
+    border: 6px double #1b7596;
     border-radius: 12px;
-    padding: 0;
+    padding: 0px 0px 10px 0px;
     margin: auto;
+    background-color: white;
 }
 
-.ATMContainer h1 {
-    color:black;
+.currentAmount {
+    color: #474747;
 }
 
 .ATMContainerHide {
@@ -36,13 +60,36 @@
 }
 
 .amountContainers label {
+    color: #474747;
     font-weight: bold;
+    font-size: 18px;
 }
 
 .amountContainers input {
+    font-weight: bold;
     border-radius: 4px;
-    border: 1px solid black;
+    border: 1px solid #474747;
     margin-right: 5px;
+    padding: 5px 10px 5px 10px;
+}
+
+.inputValueBtn {
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #1b7596;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #1b7596;
+    background-color: white;
+}
+
+.inputValueBtn:hover {
+    color: #49aace;
+    border: 1px solid #49aace;
+}
+
+.inputValueBtn:active {
+    color: #8fd1e9;
+    border: 1px solid #8fd1e9;
 }
 
 .specificBtnContainer {

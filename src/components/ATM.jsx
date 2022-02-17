@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import {increment, decrement, showATM } from '../redux/counterSlice'
 import styles from './css/ATM.module.css'
+import keypad from '../dial.png'
 
 const ATM = () => {
     let dispatch = useDispatch();
@@ -8,9 +9,7 @@ const ATM = () => {
     const isATMOpen = useSelector((state) => state.counter.showATM)
 
     const changeSpecificAmount = (num, operator) => {
-        console.log(num)
         if(operator === "-"){
-            console.log("decrease")
             dispatch(decrement(num));
         } else if (operator === "+") {
             dispatch(increment(num))
@@ -31,15 +30,20 @@ const ATM = () => {
     <div>
       <div className={!isATMOpen ? styles.ATMContainer : styles.ATMContainerHide}>
       <button onClick={() => {dispatch(showATM())}} className="startATMBtn">Start ATM</button>
+      <div className={styles.welcomeContainer}>
+      <h1 className={styles.welcomeTitle}>Welcome<br/> to React ATM</h1>
+      <img src={keypad} alt="keypad" className={styles.keypadImg}/>
+      </div>
+      <p className={styles.byMe}>By jschutt</p>
       </div>
       <div className={isATMOpen ? styles.ATMContainer : styles.ATMContainerHide}>
       <button onClick={() => {dispatch(showATM())}} className="closeATMBtn">Close ATM</button>
-      <h1>Current amount: {count}:-</h1>
+      <h1 className={styles.currentAmount}>Current amount: {count}:-</h1>
       <div className={styles.amountContainers}>
         <h2 className={styles.amountTitles}>Withdrawal</h2>
         <label htmlFor="inputValue">Amount: </label>
         <input type="number" id="withdrawValue" />
-        <button onClick={() => {changeInputAmount("-")}}>Withdraw</button>
+        <button onClick={() => {changeInputAmount("-")}} className={styles.inputValueBtn}>Withdraw</button>
         <div className={styles.specificBtnContainer}>
           <button onClick={() => {changeSpecificAmount(100, "-")}}>-100</button>
           <button onClick={() => {changeSpecificAmount(200, "-")}}>-200</button>
@@ -52,7 +56,7 @@ const ATM = () => {
       <h2 className={styles.amountTitles}>Deposit</h2>
       <label htmlFor="inputValue">Amount: </label>
       <input type="number" id="depositValue" />
-      <button onClick={() => {changeInputAmount("+")}}>Deposit</button>
+      <button onClick={() => {changeInputAmount("+")}}  className={styles.inputValueBtn}>Deposit</button>
       <div className={styles.specificBtnContainer}>
         <button onClick={() => {changeSpecificAmount(100, "+")}}>+100</button>
         <button onClick={() => {changeSpecificAmount(200, "+")}}>+200</button>
