@@ -1,5 +1,16 @@
 .ATMContainer {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 540px;
+    width: 500px;
+    border: 6px double #369bc0;
+    border-radius: 12px;
+    padding: 0;
+    margin: auto;
+}
+
+.ATMContainer h1 {
+    color:black;
 }
 
 .ATMContainerHide {
@@ -21,6 +32,7 @@
     width: 400px;
     margin: auto;
     padding-bottom: 16px;
+    background-color: white;
 }
 
 .amountContainers label {

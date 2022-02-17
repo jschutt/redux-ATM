@@ -10,7 +10,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <button onClick={() => {dispatch(showATM())}} className="btnATM">{isATMOpen ? "Close ATM" : "Open ATM"}</button>
       <ATM />
       </header>
     </div>

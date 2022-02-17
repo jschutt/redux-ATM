@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import {increment, decrement } from '../redux/counterSlice'
+import {increment, decrement, showATM } from '../redux/counterSlice'
 import styles from './css/ATM.module.css'
 
 const ATM = () => {
@@ -28,8 +28,13 @@ const ATM = () => {
     }
 
   return (
-    <div className={isATMOpen ? styles.ATMContainer : styles.ATMContainerHide}>
-      <h1>Current amount: {count}</h1>
+    <div>
+      <div className={!isATMOpen ? styles.ATMContainer : styles.ATMContainerHide}>
+      <button onClick={() => {dispatch(showATM())}} className="startATMBtn">Start ATM</button>
+      </div>
+      <div className={isATMOpen ? styles.ATMContainer : styles.ATMContainerHide}>
+      <button onClick={() => {dispatch(showATM())}} className="closeATMBtn">Close ATM</button>
+      <h1>Current amount: {count}:-</h1>
       <div className={styles.amountContainers}>
         <h2 className={styles.amountTitles}>Withdrawal</h2>
         <label htmlFor="inputValue">Amount: </label>
@@ -53,6 +58,7 @@ const ATM = () => {
         <button onClick={() => {changeSpecificAmount(200, "+")}}>+200</button>
         <button onClick={() => {changeSpecificAmount(500, "+")}}>+500</button>
         <button onClick={() => {changeSpecificAmount(1000, "+")}}>+1000</button>
+      </div>
       </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ const counterSlice = createSlice({
 
     decrement: (state, action) => {
       if(action.payload > state.count){
-        alert("Not enough money on your account!")
+        alert("There's not enough money on your account!")
       } else {
         state.count -= action.payload;
       }
