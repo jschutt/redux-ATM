@@ -4,7 +4,7 @@ const counterSlice = createSlice({
   name: "counter",
   initialState: {
     count: 1000,
-    showATM: true
+    showATM: false
   },
   reducers: {
     increment: (state, action) => {
